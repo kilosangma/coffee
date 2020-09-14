@@ -1,0 +1,32 @@
+@import './base.less';
+#createAddress{
+    .van-address-edit{
+        height: calc(~"100% - 46px");
+    }
+    .van-address-edit__buttons{
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: calc(~"100% - 20px");
+        padding: 10px;
+    }
+    height: 100%;
+    /deep/ .van-nav-bar__left i,
+    /deep/ .van-nav-bar__left span{
+        color: @maincolor;
+    }
+    /deep/ .van-button--danger,
+    .van-switch--on{
+        background-color: @maincolor;
+    }
+    .van-switch:not(.van-switch--on){
+        background-color: @mainColorA;
+    }
+    /deep/ .van-button--default{
+        border-color: @maincolor;
+        color: @maincolor;
+    }
+    /deep/ .van-field__error-message{
+        color: #e4393c;
+    }
+}

@@ -1,0 +1,100 @@
+@import './base.less';
+#order{
+    .van-tabs__line{
+        background-color: @maincolor;
+    }
+    .van-tab--active{
+        color: @maincolor;
+    }
+    .content-box{
+        width: calc(~"100% - 40px");
+        margin: 10px 10px 0 10px;
+        background-color: #fff;
+        padding: 10px;
+    }
+    .top{
+        overflow: hidden;
+        height: 25px;
+        line-height: 25px;
+        color: @sonFontColor;
+        font-size: 12px;
+        margin-bottom: 10px;
+        .number{
+            color: @mianFontColor;
+            font-size: 14px;
+        }
+    }
+    .drinkItem{
+        height: calc(~"100% - 206px");
+        overflow: auto;
+        .item{
+            border-top: 1px solid @lineColor;
+            height: 80px;
+            width: calc(~"100% - 10px");
+            // border-bottom: 1px solid @lineColor;
+            padding: 10px 5px 10px 0;
+            .van-checkbox__icon{
+                margin-top: 30px;
+            }
+            .item-img{
+                width: 70px;
+                height: 70px;
+                margin: 5px;
+            }
+            .item-right{
+                width: calc(~"100% - 90px");
+                height: calc(~"100% - 10px");
+                padding: 5px;
+                position: relative;
+                .cnName{
+                    color: @mianFontColor;
+                    font-size: 16px;
+                    font-weight: 650;
+                    height: 24px;
+                    line-height: 24px;
+                    .price{
+                            color: @mainColorB;
+                            font-size: 14px;
+                        }
+                }
+                .enName{
+                    color: @sonFontColor;
+                    font-size: 12px;
+                    height: 15px;
+                    line-height: 15px;
+                }
+                .rule{
+                    font-size: 12px;
+                    color: @sonFontColor;
+                    font-weight: 500;
+                    margin-top: 10px;
+                }
+            }
+    
+        }
+
+    }
+    .bottom{
+        overflow: hidden;
+        height: 34px;
+        .sumPzrice,
+        .date{
+            padding: 0 5px;
+            overflow: hidden;
+            height: 34px;
+            line-height: 34px;
+            font-size: 12px;
+            color:@sonFontColor;
+            >span{
+                // margin: 0 1px;
+            }
+            .priceNum{
+                font-size: 16px;
+                font-weight: 650;
+                color: @maincolor;
+            }
+        }
+    }
+        
+    
+}

@@ -4,7 +4,9 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import { Button, Form, Field, NavBar,Toast } from 'vant'
+
+
+import { Button, Form, Field, NavBar, Toast, Tabbar, TabbarItem, Swipe, SwipeItem, Lazyload, Icon, Stepper, GoodsAction, GoodsActionIcon, GoodsActionButton, SwipeCell, Empty, Checkbox, CheckboxGroup, SubmitBar, Dialog, AddressList, AddressEdit, Popup, Tab, Tabs,Uploader} from 'vant'
 import 'lib-flexible'
 import 'font-awesome/css/font-awesome.css'
 
@@ -14,25 +16,46 @@ Vue.use(Button)
   .use(Field)
   .use(Form)
   .use(Toast)
-Vue.use(VueAxios, axios)
-
+  .use(VueAxios, axios)
+  .use(Tabbar)
+  .use(TabbarItem)
+  .use(Swipe)
+  .use(SwipeItem)
+  .use(Lazyload)
+  .use(Icon)
+  .use(Stepper)
+  .use(GoodsAction)
+  .use(GoodsActionButton)
+  .use(GoodsActionIcon)
+  .use(SwipeCell)
+  .use(Empty)
+  .use(Checkbox)
+  .use(CheckboxGroup)
+  .use(SubmitBar)
+  .use(Dialog)
+  .use(AddressList)
+  .use(AddressEdit)
+  .use(Popup)
+  .use(Tab)
+  .use(Tabs)
+  .use(Uploader)
 // 配置基础请求路径
 axios.defaults.baseURL = 'http://www.kangliuyong.com:10002'
 // 配置post请求头
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded;charset=utf-8'
 //发起请求之前处理
 axios.interceptors.request.use(config => {
-  
-  console.log('config ==> ', config);
+
+  // 
   if (config.method == 'post') {
     let paramsString = '';
     //post请求参数序列化，转成一个字符串
     for (let key in config.data) {
       paramsString += key + '=' + config.data[key] + '&'
     }
-    // console.log('paramsString ==> ', paramsString);
+    // 
     config.data = paramsString.slice(0, -1);
-    // console.log('config.data ==> ', config.data);
+    // 
   }
   return config;
 })

@@ -1,0 +1,32 @@
+@import './base.less';
+#mycollect{
+    height: 100%;
+    .collect-cotent{
+        height: calc(~"100% - 50px");
+        overflow-y: auto;
+        background-color: @bgcColor;
+        .item{
+            background-color: #fff;
+            width: calc(~"50% - 30px");
+            margin: 5px;
+            padding: 10px;
+            float: left;
+            .name{
+                color: @mianFontColor;
+                margin: 10px 0;
+                font-size: 16px;
+            }
+            .price{
+                color: @maincolor;
+            }
+            i{
+                color: @sonFontColor;
+                font-size: 16px;
+            }
+        }
+    }
+    /deep/ .van-nav-bar__left i,
+    /deep/ .van-nav-bar__left span{
+        color: @maincolor;
+    }
+}

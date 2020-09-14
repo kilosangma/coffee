@@ -1,0 +1,124 @@
+@import './base.less';
+#shoppingcart{
+    height: 100%;
+    .content-box{
+        width: calc(~"100% - 30px");
+        margin: 10px 10px 0 10px;
+        background-color: #fff;
+        padding: 5px 5px 10px 5px;
+        overflow: hidden;
+    }
+    .mainContent{
+        height: 100%;
+        overflow:hidden;
+        >.content-box{
+            height: calc(~"100% - 95px");
+            // overflow: hidden;
+            .van-swipe-cell__right .van-button{
+                height: 100%;
+            }
+            .top{
+                height: 30px;
+                line-height: 30px;
+                font-size: 14px;
+                color: @sonFontColor;
+                padding: 0 5px;
+                border-bottom: 1px solid @lineColor;
+                i{
+                    margin-right: 5px;
+                }
+            }
+            .item-content{
+                // height: 490px;
+                height: calc(~ "100% - 31px");
+                overflow-y: auto;
+            }
+            .item{
+                height: 80px;
+                width: calc(~"100% - 10px");
+                border-bottom: 1px solid @lineColor;
+                padding: 10px 5px 10px 0;
+                .van-checkbox__icon{
+                    margin-top: 30px;
+                }
+                .item-img{
+                    width: 70px;
+                    height: 70px;
+                    margin: 5px;
+                }
+                .item-right{
+                    width: calc(~"100% - 110px");
+                    height: calc(~"100% - 10px");
+                    padding: 5px;
+                    position: relative;
+                    .cnName{
+                        color: @mianFontColor;
+                        font-size: 16px;
+                        font-weight: 650;
+                        height: 24px;
+                        line-height: 24px;
+                        .rule{
+                            font-size: 12px;
+                            color: @sonFontColor;
+                            margin-left: 10px;
+                            font-weight: 500;
+                        }
+                    }
+                    .enName{
+                        color: @sonFontColor;
+                        font-size: 12px;
+                        height: 15px;
+                        line-height: 15px;
+                        margin-top: 10px;
+                    }
+                    
+                }
+        
+            }
+            .van-swipe-cell__right{
+                right: -1px; //消除奇怪的线
+            }
+            .stepper{
+                overflow: hidden;
+                .price{
+                    // color: #e44e18;
+                    color: @maincolor;
+                    font-weight: 650;
+                    font-size: 14px;
+                }
+                .van-stepper__minus{
+                    border-color: @maincolor;
+                    color: @maincolor;
+                }
+                .van-stepper__plus{
+                    background-color: @maincolor;
+                    border-color: @maincolor;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    
+    .submit{
+        position: fixed;
+        left: 10px;
+        bottom: 60px;
+        height: 50px;
+        width: calc(~"100% - 20px");
+        overflow: hidden;
+        background-color: yellow;
+       
+        .van-submit-bar{
+            bottom: 50px;
+            position: static;
+        }
+    }
+    .van-checkbox__icon{
+        i{
+            border: 1px solid @mainColorB;
+        }
+    }
+    .van-checkbox__icon--checked i{
+        background-color: @maincolor;
+    }
+}

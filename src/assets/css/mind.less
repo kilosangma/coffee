@@ -1,0 +1,66 @@
+@import './base.less';
+#mind{
+    
+    height: 100%;
+    .top{
+        height: 30%;
+        
+        background-size: cover;
+        .changBgc{
+            height: 50px;
+            line-height: 50px;
+            color: #fff;
+            font-size: 14px;
+            padding: 0 10px;
+            text-shadow: 1px 1px 1px #000;
+        }
+        
+        .self{
+            height: calc(~"100% - 50px");
+            width: 100%;
+            .picture{
+                padding: 0 10px 15px 15px;
+                width: calc(~"35% - 30px");
+                height: calc(~"100% - 20px");
+                
+                // background-color: red;
+                .img-box{
+                    border-radius: 50%;
+                    overflow: hidden;
+                    border:1px solid @mainColorB
+                }
+            }
+            .mes{
+                width: 65%;
+                height: 100%;
+                .nickyname{
+                    height: 72.5px;
+                    // line-height: 72.5px;
+                    color: #fff;
+                    font-size: 14px;
+                    text-shadow: 1px 1px 1px #000;
+                }
+                .sign{
+                    height: calc(~"100% - 72.5px");
+                    // line-height: 72.5px;
+                    color: #fff;
+                    font-size: 14px;
+                    text-shadow: 1px 1px 1px #000;
+                }
+            }
+        }
+    }
+    .btn-list{
+        li{
+            padding: 10px;
+            font-size: 16px;
+            color: @mianFontColor;
+            background-color: #fff;
+            border-bottom: 1px solid @lineColor;
+            
+        }
+    }
+    .button-box{
+        margin-top: 100px;
+    }
+}

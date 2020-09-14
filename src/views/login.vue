@@ -1,15 +1,10 @@
 <template>
-  <div id="register">
-    <van-nav-bar title="账号注册" left-text="关闭" right-text="登录" left-arrow @click-left="$router.push({name:'Menu'})" @click-right="toLogin"></van-nav-bar>
+  <div id="login">
+    <van-nav-bar title="登录" left-text="关闭" right-text="注册" left-arrow  @click-right="toRegister" @click-left="$router.push({name:'Menu'})"></van-nav-bar>
     <div class="logo">
       <img class="auto-img logo-img" src="../assets/logo.png" alt="机机网" />
     </div>
     <van-form>
-      <van-field type="text" name="用户名" label="用户名" placeholder="用户名" v-model="userInfo.nickName">
-        <template #left-icon>
-          <i class="fa fa-user-circle-o fa-fw" aria-hidden="true"></i>
-        </template>
-      </van-field>
       <van-field type="text" name="手机号" label="手机号" placeholder="手机号" v-model="userInfo.phone">
         <template #left-icon>
           <i class="fa fa-volume-control-phone fa-fw" aria-hidden="true"></i>
@@ -38,7 +33,10 @@
         </template>
       </van-field>
       <div style="margin: 20px;">
-        <van-button round block type="info" @click="submit" native-type="submit">提交</van-button>
+        <van-button round block type="info" @click="submit" native-type="submit">登陆</van-button>
+      </div>
+      <div class="forgetBox">
+        <span @click="$router.push({name:'forgetPwd'})" class="fr">忘记密码</span>
       </div>
     </van-form>
   </div>
@@ -46,15 +44,13 @@
 
 <script>
 import formTest from "../assets/js/formTest";
-
-import '../assets/css/login_register.less'
+import "../assets/css/login_register.less";
 export default {
   data() {
     return {
       userInfo: {
         password: "",
-        phone: "",
-        nickName: ""
+        phone: ""
       },
       pwdShowStatus: false
     };
@@ -63,7 +59,6 @@ export default {
     pwdShow() {
       this.pwdShowStatus = !this.pwdShowStatus;
     },
-
     submit() {
       let status = formTest.validUserForm(this.userInfo, this);
       if (status) {
@@ -77,15 +72,22 @@ export default {
         data.appkey = this.appkey;
         this.axios({
           method: "POST",
-          url: "/register",
+          url: "/login",
           data
         })
           .then(result => {
-            
             this.$toast.clear("toast");
-            if (result.data.code == 100) {
-              this.$toast.success("注册成功");
-              this.$router.push({name:'Login'})
+            if (result.data.code == 200) {
+              this.$router.push({ name: "Menu" });
+              this.$toast.success("登录成功");
+              // 上传token到store
+              this.$store.commit("subToken",result.data.token)
+
+              // 存储token到localstorage
+              localStorage.setItem("token",result.data.token);
+              
+              
+              
             } else {
               this.$toast.fail(result.data.msg);
             }
@@ -97,9 +99,12 @@ export default {
       } else {
       }
     },
-    toLogin(){
-      this.$router.push({name:"Login"})
+    toRegister() {
+      this.$router.push({ name: "Register" });
     }
   }
 };
 </script>
+
+<style lang="less" scoped>
+</style>

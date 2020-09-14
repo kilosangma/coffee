@@ -1,0 +1,172 @@
+@import './base.less';
+#submit{
+    height: 100%;
+    background-color: @bgcColor;
+    .content-box{
+        width: calc(~"100% - 30px");
+        margin: 10px 10px 0 10px;
+        background-color: #fff;
+        padding: 5px;
+        // border: 1px solid red;
+    }
+    /deep/ .van-nav-bar__left i,
+    /deep/ .van-nav-bar__left span{
+        color: @maincolor;
+    }
+    .address{
+        // padding: 10px;
+        padding: 10px;
+        width: calc(~"100% - 40px");
+        height: 50px;
+        .tips{
+            font-size: 16px;
+            font-weight: 600;
+            height: 50px;
+            line-height: 50px;
+        }
+        .addressMes{
+            line-height: 20px;
+            .mes{
+                height: 20px;
+                color: @mianFontColor;
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+            .person{
+                height: 20px;
+                color: @sonFontColor;
+                font-size: 12px;
+            }
+        }
+        
+    }
+    .drinkItem{
+        height: calc(~"100% - 206px");
+        overflow: auto;
+        .item{
+            height: 80px;
+            width: calc(~"100% - 10px");
+            // border-bottom: 1px solid @lineColor;
+            padding: 10px 5px 10px 0;
+            .van-checkbox__icon{
+                margin-top: 30px;
+            }
+            .item-img{
+                width: 70px;
+                height: 70px;
+                margin: 5px;
+            }
+            .item-right{
+                width: calc(~"100% - 90px");
+                height: calc(~"100% - 10px");
+                padding: 5px;
+                position: relative;
+                .cnName{
+                    color: @mianFontColor;
+                    font-size: 16px;
+                    font-weight: 650;
+                    height: 24px;
+                    line-height: 24px;
+                    .price{
+                            color: @mainColorB;
+                            font-size: 14px;
+                      }
+                }
+                .enName{
+                    color: @sonFontColor;
+                    font-size: 12px;
+                    height: 15px;
+                    line-height: 15px;
+                }
+                .rule{
+                    font-size: 12px;
+                    color: @sonFontColor;
+                    font-weight: 500;
+                    margin-top: 10px;
+                }
+            }
+    
+        }
+
+    }
+    .sumPzrice{
+        padding: 0 5px;
+        overflow: hidden;
+        height: 50px;
+        line-height: 50px;
+        font-size: 12px;
+        color:@sonFontColor;
+        >span{
+            margin: 0 5px;
+        }
+        .priceNum{
+            font-size: 16px;
+            font-weight: 650;
+            color: @maincolor;
+        }
+    }
+    .submit{
+        position: fixed;
+        left: 10px;
+        bottom: 60px;
+        height: 50px;
+        width: calc(~"100% - 20px");
+        overflow: hidden;
+        background-color: yellow;
+       
+        .van-submit-bar{
+            bottom: 50px;
+            position: static;
+        }
+    }
+    .addressList{
+        .title{
+            height: 48px;
+            line-height: 48px;
+            padding: 0 15px;
+            font-size: 16px;
+            color: @sonFontColor;
+        }
+        .content{
+            padding: 10px 15px 0 15px;
+            height: calc(~"100% - 68px");
+            overflow-y: auto;
+        .item{
+            padding: 7px;
+            margin-bottom: 10px;
+            &:not(:last-child){
+                border-bottom: 1px solid @lineColor;
+            }
+            .item__name{
+                margin-bottom: 7px;
+            }
+            .tag{
+                background-color: @maincolor;
+                color: #fff;
+                border-radius: 12px;
+                display: block;
+                float: right;
+                width: 60px;
+                height: 20px;
+                text-align: center;
+                line-height: 20px;
+            }
+            .item__address{
+                color: @mianFontColor;
+                font-size: 14px;
+            }
+        }
+        }
+        .addMoreAddress{
+            width: 100px;
+            margin: 50px auto;
+            height: 50px;
+            .van-button{
+                margin: 0 auto;
+                border-color: @maincolor;
+                background-color: @maincolor;
+                color: #fff;
+            }
+        }
+    }
+}

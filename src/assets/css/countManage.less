@@ -1,0 +1,47 @@
+@import './base.less';
+
+#countManage{
+    /deep/ .van-nav-bar__left i,
+    /deep/ .van-nav-bar__left span,
+    /deep/.van-nav-bar__text{
+        color: @maincolor;
+    }
+    ul{
+        li{
+            overflow: hidden;
+            height: 40px;
+            margin: 0 10px;
+            padding: 5px 0;
+            line-height: 40px;
+            &:not(:last-child){
+                border-bottom: 1px solid @lineColor;
+            }
+            .title{
+                font-size: 16px;
+            }
+            .img-box{
+                width: 40px;
+                height: 40px;
+            }
+            .mes{
+                width: 70%;
+                text-align: right;
+            }
+            /deep/ .van-field{
+                width: 100%;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                .van-cell__title{
+                    font-size: 16px;
+                    line-height: 40px;
+                }
+                .van-field__control{
+                    float: right;
+                    line-height: 40px;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
